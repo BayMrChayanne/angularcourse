@@ -1,0 +1,11 @@
+.contenedor-peliculas {
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.row-peliculas {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
