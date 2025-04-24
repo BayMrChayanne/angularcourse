@@ -1,34 +1,9 @@
-<!-- <p>Hola mundo</p>
-<p>{{title}}</p>
-<p>Mi novia es {{ nombre }} y tiene {{ edad }}</p>
+<h2>En cines</h2>
 
-<p>La suma de 2+2 es {{2+2}}</p>
-<p>El doble de 3 es {{duplicarNumero(3)}}</p> -->
+<app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
 
-<h2>Datos pelicula</h2>
+<h2>Proximos estrenos</h2>
 
-<!-- <h4>Implementacion clasica con *ngFor</h4>
-<div *ngFor="let pelicula of peliculas; let indice = index">
-  <p>{{indice}}) Nombre: {{pelicula.titulo | uppercase}}</p>
-  <p>Fecha lanzamiento: {{pelicula.fecha_lanzamiento | date:"dd-MMMM-yyyy" | uppercase}}</p>
-  <p>Precio {{pelicula.precio | currency}}</p>
-</div> -->
-
-<h4>Implementacion moderna con For</h4>
-@for (pelicula of peliculas; track $index) {
-  <div class="contenedor-peliculas">
-    <div class="row-peliculas">
-      <div>
-        <img [ngSrc]="pelicula.poster" priority width="169" height="250">
-      </div>
-      <div>
-        <p>{{$index}}) Nombre: {{pelicula.titulo | uppercase}}</p>
-        <p>Fecha lanzamiento: {{pelicula.fecha_lanzamiento | date:"dd-MMMM-yyyy" | uppercase}}</p>
-        <p>Precio {{pelicula.precio | currency}}</p>
-      </div>
-    </div>
-
-  </div>
-}
+<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
 
 

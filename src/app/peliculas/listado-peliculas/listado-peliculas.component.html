@@ -1,0 +1,33 @@
+<button (click)="agregarPelicula()">Agregar pelicula </button>
+
+@if (!peliculas) {
+  <img src="loading.gif" />
+}
+@else if (peliculas.length === 0) {
+  <div *ngIf="peliculas?.length === 0">
+    <p>No hay elementos para mostrar</p>
+  </div>
+}
+@else {
+  <!-- FOR EACH -->
+  @for (pelicula of peliculas; track $index) {
+    <div class="contenedor-peliculas">
+      <div class="row-peliculas">
+        <div>
+          @if (pelicula.poster) {
+            <img [src]="pelicula.poster" width="169" height="250">
+          }@else {
+            <img src="default.jpg" width="169" height="250">
+          }
+        </div>
+        <div>
+          <p>{{$index}}) Nombre: {{pelicula.titulo }}</p>
+          <p>Fecha lanzamiento: {{pelicula.fecha_lanzamiento | date:"dd-MMMM-yyyy" }}</p>
+          <p>Precio {{pelicula.precio | currency}}</p>
+          <button (click)="remover(pelicula)">Remover</button>
+        </div>
+      </div>
+
+    </div>
+  }
+}
